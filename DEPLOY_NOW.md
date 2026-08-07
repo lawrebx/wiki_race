@@ -56,10 +56,12 @@ FRONTEND_URL=https://placeholder-will-update-later.vercel.app
 
 Railway should auto-detect, but verify:
 - **Build Command:** `cd backend && npm install && npm run build`
-- **Start Command:** `cd backend && npm start`
+- **Start Command:** `cd backend && npm run db:push && npm start`
 - **Root Directory:** `/` (monorepo root)
 
-Or Railway will use the included `railway.json` config automatically.
+Railway will use the included `railway.json` or `railway.toml` config automatically.
+
+**Note:** Database migrations (`db:push`) now run automatically on each deploy via the start command!
 
 ### 2.4 Deploy
 
@@ -70,24 +72,11 @@ Or Railway will use the included `railway.json` config automatically.
 
 ### 2.5 Initialize Database
 
-After deployment, run migrations:
+**Good news!** Database migrations now run automatically when Railway starts your app.
 
-**Option A: Railway CLI (if installed)**
-```powershell
-railway link
-railway run npm run db:push --workspaces=backend
-```
+The start command includes `npm run db:push`, so your database tables will be created on first deploy.
 
-**Option B: Drizzle Studio**
-1. In Railway dashboard, click your service
-2. Go to Variables tab
-3. Copy your DATABASE_URL
-4. Locally run: `cd backend && DATABASE_URL="your_railway_db_url" npm run db:push`
-
-**Option C: Via Railway Shell**
-1. In Railway dashboard, click your service
-2. Click "Deploy Logs"
-3. You can trigger a redeploy to run migrations automatically if configured
+No manual migration needed! ✅
 
 ### 2.6 Verify Backend
 
