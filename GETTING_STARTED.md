@@ -8,16 +8,16 @@ Follow these steps to get Wiki Race up and running:
 
 ## Step 1: Install Node.js ⚠️ REQUIRED
 
-The project needs Node.js to run. 
+The project needs Node.js 20 or higher to run. 
 
 1. **Download Node.js**
    - Go to: https://nodejs.org/
-   - Download the **LTS version** (recommended for most users)
+   - Download the **LTS version** (20.x or higher)
    - Run the installer
 
 2. **Verify Installation**
    - Open a **NEW** terminal/PowerShell window
-   - Run: `node --version` (should show v18 or higher)
+   - Run: `node --version` (should show v20 or higher)
    - Run: `npm --version` (should show version number)
 
 3. **Restart VS Code** after installing Node.js

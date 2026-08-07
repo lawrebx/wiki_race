@@ -3,9 +3,9 @@
 ## ⚠️ MANUAL SETUP REQUIRED
 
 ### Prerequisites to Install
-- [ ] **Install Node.js** (v18 or higher)
+- [ ] **Install Node.js** (v20 or higher) ⚠️ REQUIRED
   - Download from: https://nodejs.org/
-  - Choose the LTS version (recommended)
+  - Choose the LTS version (20.x recommended)
   - Verify installation: Open new terminal and run `node --version` and `npm --version`
   - Restart VS Code after installation
 

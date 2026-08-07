@@ -58,7 +58,7 @@ wiki-race/
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 20+ (required for latest dependencies)
 - PostgreSQL database (local or Neon)
 - npm or yarn
 

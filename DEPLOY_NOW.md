@@ -54,14 +54,17 @@ FRONTEND_URL=https://placeholder-will-update-later.vercel.app
 
 ### 2.3 Configure Build Settings
 
-Railway should auto-detect, but verify:
-- **Build Command:** `cd backend && npm install && npm run build`
+Railway will automatically detect Node.js 20 from the following files:
+- `nixpacks.toml` - Specifies Node.js 20
+- `.nvmrc` - Node version file
+- `package.json` - Engines field
+
+The build will use:
+- **Node Version:** 20.18.1 (specified in config files)
+- **Build Command:** `cd backend && npm run build`
 - **Start Command:** `cd backend && npm run db:push && npm start`
-- **Root Directory:** `/` (monorepo root)
 
-Railway will use the included `railway.json` or `railway.toml` config automatically.
-
-**Note:** Database migrations (`db:push`) now run automatically on each deploy via the start command!
+**Note:** Database migrations (`db:push`) run automatically on each deploy via the start command!
 
 ### 2.4 Deploy
 
