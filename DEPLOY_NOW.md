@@ -54,17 +54,16 @@ FRONTEND_URL=https://placeholder-will-update-later.vercel.app
 
 ### 2.3 Configure Build Settings
 
-Railway will automatically detect Node.js 20 from the following files:
-- `nixpacks.toml` - Specifies Node.js 20
-- `.nvmrc` - Node version file
-- `package.json` - Engines field
+Railway will automatically detect Node.js 20 from the configuration files and use:
+- **Node Version:** 20.19.5 (from `.nvmrc` and `nixpacks.toml`)
+- **Install Command:** `npm install --legacy-peer-deps` (handles esbuild conflicts)
+- **Build Command:** `cd backend && npm run build` (compiles TypeScript)
+- **Start Command:** `cd backend && npm run db:push && npm start` (runs migrations + starts server)
 
-The build will use:
-- **Node Version:** 20.18.1 (specified in config files)
-- **Build Command:** `cd backend && npm run build`
-- **Start Command:** `cd backend && npm run db:push && npm start`
-
-**Note:** Database migrations (`db:push`) run automatically on each deploy via the start command!
+**Note:** 
+- The `--legacy-peer-deps` flag resolves peer dependency conflicts
+- Database migrations run automatically on each deploy
+- TypeScript is compiled during build, then Node runs the JS output
 
 ### 2.4 Deploy
 
